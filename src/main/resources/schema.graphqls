@@ -1,0 +1,20 @@
+
+type Delivery {
+    deliveryId: ID
+    product: String
+    supplier: String
+    quantity: String
+    expectedDate: String
+    expectedWarehouse: String
+    isReceived: Boolean
+}
+
+
+type Query{
+    deliveries : [Delivery]
+    findDeliveriesByStatus(isReceived:Boolean) : [Delivery]
+}
+
+type Mutation {
+    markDeliveryAsReceived(deliveryId:String): Delivery
+}
